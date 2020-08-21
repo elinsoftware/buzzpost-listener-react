@@ -38,7 +38,7 @@ First - save the content of javascript file as a style sheet (`content_css` tabl
 >You can now run the app just by navigating to `<servicenow_url>/<sys_id>.cssdbx`.
 
 #### ServiceNow Native UI (UI16)
-For ServiceNow native UI (UI16) you load the application with the following gloabal UI script ("Global" set to "true"):
+For ServiceNow native UI (UI16) load the application with the following global UI script ("Global" set to "true"):
 ```javascript
 function init(){
 	var top = window.top;
