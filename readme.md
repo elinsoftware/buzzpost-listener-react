@@ -23,14 +23,14 @@ The application expects that the message is a stringified JSON object that confo
     "adsf" :"top-right",      // top, top-right, top-left, bottom, bottom-right, bottom-left
     "timeout":"0",            // milliseconds, 0 means no timeout
     "message": "Hello World!" // text of the message
-	}
+}
 ```
 
 ## How to build and deploy
 
 Build the app: `npm run build`. That command creates a single javascript file in a **Dist** folder.
 
-To deploy the app into ServiceNow you need perform a few steps.
+To deploy the app into ServiceNow you need to perform a few steps.
 
 First - save the content of javascript file as a style sheet (`content_css` table) and write down `sys_id` of a newly created record. 
 
@@ -61,6 +61,6 @@ init();
 ```
 ### Service Portal
 
-To run the app in Service Portal you just need to load the app (javascript file) as a part of ServicePortal theme or widget.
+To run the app in Service Portal you just need to load the app (javascript file) as a part of Service Portal theme or widget.
 
 
