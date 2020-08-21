@@ -2,16 +2,17 @@
 
 This is an example of a simple message listener for ServiceNow built with React.
 
-The app listens to a specific [buzzPost](https://buzzpost.io) channel and displays an alert when there is a new message.
+Update set that includes compiled application and script examples can be downloaded [here](https://s3.amazonaws.com/dev-labs.io/buzzpost/buzzPost-listener-1.03.xml) (update set details explained in [medium blog post](https://medium.com/@pishchulin/in-app-alerts-and-notifications-in-servicenow-b712eebacc8)).
 
-Channel name defined as follows: `serviceNow_instance_URL/user_sys_id`
+The app listens to a specific [buzzPost](https://buzzpost.io) channel and displays an alert when there is a new message. Channel name defined as follows: `serviceNow_instance_URL/user_sys_id`
 
 ## How it works
 
-The application receives two parameters from ServiceNow to identify the channel name to subscribe:
+The application receives three parameters from ServiceNow to identify the channel name to subscribe:
 
 1. **Instance URL** - this param should be passed to the app in `window.prefixID` variable.
-2. **User sys_id** - this param the application retrieves from out-of-the-box ServiceNow object `window.NOW.user.userID`
+2. **User sys_id** - this param the application retrieves from out-of-the-box ServiceNow object `window.NOW.user.userID`.
+3. **buzzPost broker URL** - this is the host name of the broker server, it's retrieved from `window.buzzPostBroker` variable. 
 
 Incoming message is always a *string*. 
 
