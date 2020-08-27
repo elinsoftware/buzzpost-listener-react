@@ -20,11 +20,21 @@ if (process.env.NODE_ENV === 'development') {
     window.prefixID = "ven01994.service-now.com"
 }
 
-if (window.NOW.user.name!=undefined && window.NOW.user.name!="guest") {
+if (window.NOW.user!=undefined && window.NOW.user.name!=undefined && window.NOW.user.name!="guest")  {
     if (window.buzzPostBroker!=undefined && window.buzzPostBroker!='') {
+        window.buzzPostUserID = window.NOW.user.userID
         FocusStyleManager.onlyShowFocusOnTabs()
         ReactDOM.render(<App />, document.getElementById("buzzPost-root"))
     } else {
+        console.log('%cbuzzPost: message broker server is not defined. Please provide message broker url in window.buzzPostBroker','color:blue')
+    }
+} else if (window.NOW.user_id!=undefined && window.NOW.user_name!=undefined && window.NOW.user_name!="guest") {
+    if (window.buzzPostBroker!=undefined && window.buzzPostBroker!='') {
+        window.buzzPostUserID = window.NOW.user_id
+        FocusStyleManager.onlyShowFocusOnTabs()
+        ReactDOM.render(<App />, document.getElementById("buzzPost-root"))
+    }
+     else {
         console.log('%cbuzzPost: message broker server is not defined. Please provide message broker url in window.buzzPostBroker','color:blue')
     }
 }

@@ -2,11 +2,11 @@ import React from "react";
 import {Toaster} from "@blueprintjs/core";
 
 const App = () => {
-  console.log("%cbuzzPost 1.4: listener loaded for "+window.NOW.user.userID,'color:blue')
+  console.log("%cbuzzPost 1.4: listener loaded for "+window.buzzPostUserID,'color:blue')
   
   // window.prefixID is a prefix which can be used to isolated servicenow accoutns
   // when a user has the same sys_id on multiple environments 
-  const CHANNEL = window.prefixID+"/"+window.NOW.user.userID
+  const CHANNEL = window.prefixID+"/"+window.buzzPostUserID
   
   // construct URL for evtSource - check if secret presented in the broker url
   let evtSourceURL = ''
