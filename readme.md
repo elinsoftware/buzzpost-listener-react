@@ -12,7 +12,7 @@ The application receives three parameters from ServiceNow to identify the channe
 
 1. **Instance URL** - this param should be passed to the app in `window.prefixID` variable.
 2. **User sys_id** - this param the application retrieves from out-of-the-box ServiceNow object `window.NOW.user.userID`.
-3. **buzzPost broker URL** - this is the host name of the broker server, it's retrieved from `window.buzzPostBroker` variable. 
+3. **buzzPost broker URL** - this is the host name of the broker server, it's retrieved from `window.buzzPostBroker` variable. If it is a private secured server, then a secret should be supplied as a URL param as well (e.g. `https://hub11.dev-labs.io?secret=XYZ`).
 
 Incoming message is always a *string*. 
 
@@ -45,7 +45,7 @@ function init(){
 	if (typeof top.isListenerLoaded != 'undefined' || top.NOW.user_name=="guest") {
 		return;
 	}
-	top.buzzPostBroker = "https://hub11.dev-labs.io";
+	top.buzzPostBroker = "https://hub11.dev-labs.io?secret=XYZ";
 	top.prefixID = location.hostname;
 	injectJS();
 }

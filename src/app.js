@@ -2,15 +2,24 @@ import React from "react";
 import {Toaster} from "@blueprintjs/core";
 
 const App = () => {
-  console.log("%cbuzzPost: listener 1.03 loaded for "+window.NOW.user.userID,'color:blue')
+  console.log("%cbuzzPost 1.4: listener loaded for "+window.NOW.user.userID,'color:blue')
   
   // window.prefixID is a prefix which can be used to isolated servicenow accoutns
   // when a user has the same sys_id on multiple environments 
   const CHANNEL = window.prefixID+"/"+window.NOW.user.userID
   
-  const evtSource = new EventSource(window.buzzPostBroker+"?channels="+CHANNEL, { withCredentials: false } );
+  // construct URL for evtSource - check if secret presented in the broker url
+  let evtSourceURL = ''
+  if (window.buzzPostBroker.indexOf('?secret')>=0) {
+    evtSourceURL = window.buzzPostBroker+"&channels="+CHANNEL
+    window.buzzPostBroker = '<removed due to a secret>'
+  } else {
+    evtSourceURL = window.buzzPostBroker+"?channels="+CHANNEL
+  }
+
+  const evtSource = new EventSource(evtSourceURL, { withCredentials: false } );
   evtSource.onmessage = function(event) {
-      console.log('%cbuzzPost: received message ','color:blue',event.data)
+      console.log('%cbuzzPost 1.4: received message ','color:blue',event.data)
       var payload = JSON.parse(event.data)
 
       let message = {}
