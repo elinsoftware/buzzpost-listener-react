@@ -21,7 +21,7 @@ The application expects that the message is a stringified JSON object that confo
 {
     "intent":"danger",        // none, primary, warning, danger, success
     "icon":"flag",            // blueprintjs.com/docs/#icons
-    "adsf" :"top-right",      // top, top-right, top-left, bottom, bottom-right, bottom-left
+    "position" :"top-right",      // top, top-right, top-left, bottom, bottom-right, bottom-left
     "timeout":"0",            // milliseconds, 0 means no timeout
     "message": "Hello World!" // text of the message
 }

@@ -1,6 +1,6 @@
 import React from "react"; 
 import {Toaster} from "@blueprintjs/core";
-
+import parse from 'html-react-parser';
 const App = () => {
   console.log("%cbuzzPost 1.4: listener loaded for "+window.buzzPostUserID,'color:blue')
   
@@ -24,9 +24,8 @@ const App = () => {
 
       let message = {}
       let position = "top-right"
-      // safety block
-      if (payload.message.length > 512) message.message = payload.message.substring(0,512)
-      else message.message = payload.message
+
+      message.message = parse(payload.message)
 
       switch(payload.intent) {
         case "primary":
