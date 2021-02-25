@@ -2,7 +2,7 @@ import React from "react";
 import {Toaster} from "@blueprintjs/core";
 import parse from 'html-react-parser';
 const App = () => {
-  console.log("%cbuzzPost 1.4: listener loaded for "+window.buzzPostUserID,'color:blue')
+  console.log("%cbuzzPost 2.0/Feb2021: listener loaded for "+window.buzzPostUserID,'color:blue')
   
   // window.prefixID is a prefix which can be used to isolated servicenow accoutns
   // when a user has the same sys_id on multiple environments 
@@ -19,7 +19,7 @@ const App = () => {
 
   const evtSource = new EventSource(evtSourceURL, { withCredentials: false } );
   evtSource.onmessage = function(event) {
-      console.log('%cbuzzPost 1.4: received message ','color:blue',event.data)
+      console.log('%cbuzzPost 2.0/Feb2021: received message ','color:blue',event.data)
       var payload = JSON.parse(event.data)
 
       let message = {}

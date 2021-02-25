@@ -2,7 +2,7 @@
 
 This is an example of a simple message listener for ServiceNow built with React.
 
-Update set that includes compiled application and script examples can be downloaded [here](https://s3.amazonaws.com/dev-labs.io/buzzpost/buzzPost-listener-1.03.xml) (update set details explained in [medium blog post](https://medium.com/@pishchulin/in-app-alerts-and-notifications-in-servicenow-b712eebacc8)).
+Update set that includes compiled application and script examples can be downloaded [here](https://s3.amazonaws.com/dev-labs.io/buzzpost/buzzPost+listener+2.0.xml) (update set details explained in [medium blog post](https://medium.com/@pishchulin/in-app-alerts-and-notifications-in-servicenow-b712eebacc8)).
 
 The app listens to a specific [buzzPost](https://buzzpost.io) channel and displays an alert when there is a new message. Channel name defined as follows: `serviceNow_instance_URL/user_sys_id`
 
