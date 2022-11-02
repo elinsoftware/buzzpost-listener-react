@@ -4922,7 +4922,7 @@ span.bp3-popover-target{
   position:fixed;
   right:0;
   left:0;
-  z-index:40;
+  z-index:400000;
   overflow:hidden;
   padding:0 20px 20px;
   pointer-events:none; }
